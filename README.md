@@ -1,42 +1,29 @@
-# credit-risk-classification
+# Credit Risk Classification
 Module 20 Challenge Files
-
-# Module 12 Report Template
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+ The purpose of this analysis is to determine the effectiveness of the model. This model attempts to predict the creditworthiness of a loan. The dataset used to train this model includes financial information such as loan size, interest rate, income, debt-to-income ratio, number of accounts, derogatory marks, and total debt. The customer's history, recorded as the loan outcome, was used as the target value. 
+ 
+ First, the data is separated into the target variable (the loan status plotted as 'y') and the remaining columns as 'X'. The dataset is then split into training and testing groups. These were loaded into the model-fit-predict method, and a logistic regression was created. 
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
+The Logistic Regression model uses training data to predict the outcome. The training outcomes are compared to the testing outcomes to determine the effectiveness of the model.  
 
 ## Results
 
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
+The Logistic Regression model uses loan outcome recorded as '0' for a healthy loan and '1' for a high-risk loan as the target value. The model has an overall Accuracy score of 0.92 (92%), indicating that the model has a high likelihood of predicting an accurate outcome. 
 
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+**Healthy loans**
+ - **Precision** 1.00 (100%) - means this model is excellent at predicting healthy loans. 
+ - **Recall** 0.99 (99%) - indicates this model correctly identified almost all of the healthy loans. 
+
+**High-Risk loans**
+ - **Precision** 0.84 (84%) - This means 84% of the loans were correctly predicted as high-risk.
+ - **Recall** 0.94 (94%) - of the identified high-risk loans were correctly labeled. 
+
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+The Logistic Regression model is excellent at predicting healthy loans. The high **Precision** and **Recall** results of healthy loans show this model's effectiveness. However, many high-risk loans were missed. This could result in lost revenue for the customer if they rely on the model and take on more high-risk loans than expected, especially if those loans are large. 
 
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
-
-#### Write a Credit Risk Analysis Report
-
-Write a brief report that includes a summary and analysis of the performance of the machine learning models that you used in this homework. You should write this report as the `README.md` file included in your GitHub repository.
-
-Structure your report by using the report template that `Starter_Code.zip` includes, ensuring that it contains the following:
-
-1. **An overview of the analysis:** Explain the purpose of this analysis.
-
-2. **The results:** Using a bulleted list, describe the accuracy score, the precision score, and recall score of the machine learning model.
-
-3. **A summary:** Summarize the results from the machine learning model. Include your justification for recommending the model for use by the company. If you don’t recommend the model, justify your reasoning.
+The customer should carefully assess their risk tolerance before implementing this model, particularly if their goal is to identify risky loans. 
